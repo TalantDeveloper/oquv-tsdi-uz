@@ -1,0 +1,93 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'image/logotip.ico' %}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>blog.uz</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <title>O'quv Uslubiy </title>
+</head>
+<body>
+<div id="root">
+    <div class="App">
+        <div class="top-head">
+            <div class="content">
+                <nav><p><i class="fa fa-fax"></i> +998(91) 123-45-67</p>
+                    <p><i class="fa fa-envelope"></i> info@tsdi.uz</p></nav>
+                <nav>
+                    <ul class="messenger-lists">
+                        <li><a href="/"><i class="fa fa-paper-plane cltg"></i></a></li>
+                        <li><a href="/"><i class="fa fa-twitter cltwitter"></i></a></li>
+                        <li><a href="/"><i class="fa fa-facebook clfacebook"></i></a></li>
+                        <li><a href="/"><i class="fa fa-instagram clinsta"></i></a></li>
+                        <li><a href="/"><i class="fa fa-youtube clyoutube"></i></a></li>
+                    </ul>
+                    <p><i class="fa fa-fork"></i>Uzbek</p>
+                    <p>Tizimga kirish <i class="fa fa-sign-out"></i></p></nav>
+            </div>
+        </div>
+        <div class="list-head">
+            <div class="content">
+                <ul class="lists">
+                    <li class="list"><a href="/mamuriyat"><p>Ma'muriyat</p></a></li>
+                    <li class="list"><a href="/xodim"><p>Xodimlar</p></a></li>
+                    <li class="list"><a href="/">Dars jadvali</a></li>
+                    <li class="list"><a href="/"><p>Malaka tavsifnomasi</p></a></li>
+                    <li class="list"><a href="/"><p>Malaka talablar</p></a></li>
+                    <li class="list"><a href="/"><p>Standartlar</p></a></li>
+                    <li class="list"><a href="/yangilik"><p>Yangiliklar</p></a></li>
+                </ul>
+            </div>
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+        <!-- Start Footer -->
+        <div class="footer">
+            <div class="content">
+                <div class="foot">
+                    <h3>Ijtimoiy tarmoqlar</h3>
+                    <nav class="effect"></nav>
+                    <ul class="messenger-list">
+                        <li><a href="/"><i class="fa fa-paper-plane cltg"></i>Telegram</a></li>
+                        <li><a href="/"><i class="fa fa-twitter cltwitter"></i>Twitter</a></li>
+                        <li><a href="/"><i class="fa fa-facebook clfacebook"></i>Facebook</a></li>
+                        <li><a href="/"><i class="fa fa-instagram clinsta"></i>Instagram</a></li>
+                        <li><a href="/"><i class="fa fa-youtube clyoutube"></i>Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="foot"><h3>Bizning manzil</h3>
+                    <nav class="effect"></nav>
+                    <ul class="messenger-list">
+                        <li><a><i class="fa fa-map-marker cltg"></i>103, Taraqqiyot ko'chasi, Toshkent .sh</a></li>
+                        <li><a><i class="fa fa-phone clfacebook"></i>+998(91 151-31-17)</a></li>
+                        <li><a><i class="fa fa-fax cltwitter"></i>+998(91 151-31-17)</a></li>
+                        <li><a><i class="fa fa-envelope clfax"></i>info@tsdi.uz</a></li>
+                        <li><a><i class="fa fa-globe cltg"></i>www.tsdi.uz</a></li>
+                    </ul>
+                </div>
+                <div class="foot">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20120.112689896025!2d69.296945!3d41.310068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41490626bc752d26!2sToshkent%20davlat%20stomatologiya%20instituti%20eski!5e1!3m2!1sen!2sus!4v1671468313818!5m2!1sen!2sus"
+                            width="100%" height="250" frameborder="0" allowfullscreen="" aria-hidden="false"
+                            tabindex="0" style="border: 1px;"></iframe>
+                </div>
+            </div>
+            <div class="content"><p class="alert">Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston
+                Respublikasi qonunlariga, shu jumladan mualliflik huquqi va turdosh huquqlarga muvofiq himoya qilinadi.
+                Sayt materiallaridan foydalanganda, Toshkent davlat stomatologiya instituti saytiga havola ko'rsatilishi
+                shart. Diqqat! Agar siz matnda xatoliklarni aniqlasangiz, ularni belgilab, web sayt ma'murini xabardor
+                qilish uchun biz bilan bog'lanishingizni so'raymiz</p></div>
+        </div>
+    </div>
+</div>
+{#<script defer="defer" src="/static/js/script.js"></script>#}
+
+</body>
+</html>
