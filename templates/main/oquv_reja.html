@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="oquv_reja">
+        <div class="top-content">
+            <div class="content">
+                <nav class="top-bar"><h3><i class="fa fa-users"></i> O`quv rejalar</h3>
+                    <nav>
+                        <a href="/"><i class="fa fa-home clfacebook"></i></a>/
+                        <i><a class="clfacebook" href="/">
+                            o`quv rejalar
+                        </a></i>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+        <div class="content"><br><br>
+            {% for faculty in faculties %}
+                <p class="div-fakultet">{{ faculty.name }}</p>
+                {% for curriculum in curriculums %}
+                    {% if curriculum.faculty == faculty %}
+                        <div class="fakulty-box">
+                            {% for course in curriculum.course.all %}
+                                <a href="{{curriculum.file.url }}">
+                                    <nav class="file-box">
+                                        <img class="file-img" src="{% static 'image/book.png' %}" alt="file.png">
+                                        <p class="file-text">2022-2023 <br> {{ faculty.name }} {{ course }}</p>
+                                    </nav>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+{% endblock %}
+

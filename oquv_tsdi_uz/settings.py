@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',  # ModelTranslation
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,11 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+
+    'ckeditor',  # Ckeditor
+    'ckeditor_uploader',  # Ckeditor
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # model-translation settings
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,6 +76,41 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'oquv_tsdi_uz.wsgi.application'
 
+
+# Model Translation
+
+from django.utils.translation import gettext_lazy as _
+LANGUAGES = (
+    ('uz', _("Uzbek")),
+    ('en', _('English')),
+    ('ru', _('Russian')),
+)
+LANGUAGE_CODE = 'en'
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locate/',
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+
+
+# CKEDITOR Settings
+CKEDITOR_BASEPATH = '/static/ckeditor/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'removePlugins': 'export_pdf',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet',
+            ]
+        ),
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -105,9 +145,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 

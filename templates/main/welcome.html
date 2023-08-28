@@ -73,14 +73,22 @@
                     <hr>
                 </nav>
                 <div class="new-box">
-                    <nav class="new-body">
-                        <nav class="new-time"><em>Yangilik |</em> 19.12.2022 <i class="fa fa-eye"> 65</i></nav>
-                        <nav class="news-img"><img src="{% static 'image/news.png' %}" alt="rasm">
+                    {% for new in news %}
+                        <nav class="new-body">
+                            <nav class="new-time"><em>Yangilik |</em> {{ new.create_at | date:"d:m:Y"}} <i class="fa fa-eye">
+                                {{ new.sees }}</i>
+                            </nav>
+                            <nav class="news-img"><img src="{{ new.image.url }}" alt="rasm">
+                            </nav>
+                            <p class="new-text">
+                                <a href="{% url 'main:new' new.id %}">
+                                    {{ new.title|slice:160 }}
+                                </a>
+                            </p>
                         </nav>
-                        <p class="new-text">Qatarda bo‘lib o‘tayotgan Jahon chempionati finalida Fransiyani mag‘lub
-                            etgan Argentina terma jamoasi mundiallarda uchinchi marta chempionlikni qo‘lga
-                            kiritdi.</p>
-                    </nav>
+                    {% endfor %}
+
+
                     <nav class="new-body">
                         <nav class="new-time"><em>Yangilik |</em> 19.12.2022 <i class="fa fa-eye"> 65</i></nav>
                         <nav class="news-img"><img src="{% static 'image/news.png' %}" alt="rasm">
