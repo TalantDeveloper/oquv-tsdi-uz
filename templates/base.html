@@ -20,26 +20,36 @@
                     <p><i class="fa fa-envelope"></i> info@tsdi.uz</p></nav>
                 <nav>
                     <ul class="messenger-lists">
-                        <li><a href="/"><i class="fa fa-paper-plane cltg"></i></a></li>
+                        <li><a href="https://t.me/tsdi_official"><i class="fa fa-paper-plane cltg"></i></a></li>
                         <li><a href="/"><i class="fa fa-twitter cltwitter"></i></a></li>
                         <li><a href="/"><i class="fa fa-facebook clfacebook"></i></a></li>
                         <li><a href="/"><i class="fa fa-instagram clinsta"></i></a></li>
                         <li><a href="/"><i class="fa fa-youtube clyoutube"></i></a></li>
                     </ul>
-                    <p><i class="fa fa-fork"></i>Uzbek</p>
-                    <p>Tizimga kirish <i class="fa fa-sign-out"></i></p></nav>
+                    <p>
+                        <i class="fa fa-fork"></i>
+                        Uzbek
+                    </p>
+                    <p><a href="/admin">
+                        Tizimga kirish
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+
+                    </p>
+                </nav>
             </div>
         </div>
         <div class="list-head">
             <div class="content">
                 <ul class="lists">
-                    <li class="list"><a href="/mamuriyat"><p>Ma'muriyat</p></a></li>
-                    <li class="list"><a href="/xodim"><p>Xodimlar</p></a></li>
-                    <li class="list"><a href="/oquv_reja">O'quv rejalar</a></li>
-                    <li class="list"><a href="/"><p>Malaka tavsifnomasi</p></a></li>
-                    <li class="list"><a href="/"><p>Malaka talablar</p></a></li>
-                    <li class="list"><a href="/"><p>Dars jadvali</p></a></li>
-                    <li class="list"><a href="/yangilik"><p>Yangiliklar</p></a></li>
+                    <li class="list"><a href="{% url 'main:welcome' %}"><p>Bosh sahifa</p></a></li>
+                    <li class="list"><a href="{% url 'main:mamuriyat' %}"><p>Ma'muriyat</p></a></li>
+                    <li class="list"><a href="{% url 'main:xodim' %}"><p>Xodimlar</p></a></li>
+                    <li class="list"><a href="{% url 'main:oquv_reja' %}">O'quv rejalar</a></li>
+                    <li class="list"><a href="{% url 'main:tavsifnoma' %}"><p>Malaka tavsifnomasi</p></a></li>
+                    <li class="list"><a href="{% url 'main:talablar' %}"><p>Malaka talablar</p></a></li>
+                    <li class="list"><a href="{% url 'main:jadval' %}"><p>Dars jadvali</p></a></li>
+                    <li class="list"><a href="{% url 'main:news' %}"><p>Yangiliklar</p></a></li>
                 </ul>
             </div>
         </div>
@@ -55,7 +65,7 @@
                     <h3>Ijtimoiy tarmoqlar</h3>
                     <nav class="effect"></nav>
                     <ul class="messenger-list">
-                        <li><a href="/"><i class="fa fa-paper-plane cltg"></i>Telegram</a></li>
+                        <li><a href="https://t.me/tsdi_official"><i class="fa fa-paper-plane cltg"></i>Telegram</a></li>
                         <li><a href="/"><i class="fa fa-twitter cltwitter"></i>Twitter</a></li>
                         <li><a href="/"><i class="fa fa-facebook clfacebook"></i>Facebook</a></li>
                         <li><a href="/"><i class="fa fa-instagram clinsta"></i>Instagram</a></li>

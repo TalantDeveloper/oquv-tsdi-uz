@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="malaka">
+        <div class="top-content">
+            <div class="content">
+                <nav class="top-bar">
+                    <h3>
+                        <i class="fa fa-users"></i>
+                        Malaka talablari
+                    </h3>
+                    <nav>
+                        <a href="{% url 'main:welcome' %}">
+                            <i class="fa fa-home clfacebook"></i>
+                        </a>
+                        /
+                        <i>
+                            <a class="clfacebook" href="{% url 'main:welcome' %}">
+                                malaka talablari
+                            </a>
+                        </i>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+        <div class="content">
+            {% for requirement in requirements %}
+                <a href="{{ requirement.file.url }}">
+                    <nav>
+                        <img src="{% static 'image/book.png' %}g" alt="file.png">
+                        <p>
+                            {{ requirement.faculty.name_uz }} malaka talablari
+                        </p>
+                    </nav>
+                </a>
+                {% empty %}
+                    <h2>Malaka talablari bo'yicha ma'lumotlar yo'q.</h2>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

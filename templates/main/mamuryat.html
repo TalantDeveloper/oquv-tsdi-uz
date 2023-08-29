@@ -6,21 +6,36 @@
     <div class="mamuriyat">
         <div class="top-content">
             <div class="content">
-                <nav class="top-bar"><h3><i class="fa fa-users"></i> O’quv ishlari bo’yicha prorektorat</h3>
-                    <nav><a href="/"><i class="fa fa-home clfacebook"></i></a>/<i><a class="clfacebook" href="/">ma`muriyat</a></i>
+                <nav class="top-bar">
+                    <h3>
+                        <i class="fa fa-users"></i>
+                        O’quv ishlari bo’yicha prorektorat
+                    </h3>
+                    <nav>
+                        <a href="{% url 'main:welcome' %}">
+                            <i class="fa fa-home clfacebook"></i>
+                        </a>
+                        /
+                        <i>
+                            <a class="clfacebook" href="{% url 'main:welcome' %}">
+                                ma`muriyat
+                            </a>
+                        </i>
                     </nav>
                 </nav>
             </div>
         </div>
         <div class="content">
-            <div class="bos-bar"><h3 class="bos-bar-title">O’quv ishlari bo’yicha prorektor</h3>
+            <div class="bos-bar"><h3 class="bos-bar-title">
+                O’quv ishlari bo’yicha prorektor
+            </h3>
                 <nav class="img-box">
                     <img src="/static/image/prorektor.jpg" alt="Image">
                     <br><br>
                     <span>
                         <p>
                             Baymakov Sayfiddin Risbayevich
-</p>
+                        </p>
                     </span>
                 </nav>
                 <nav class="bos-about">
@@ -67,58 +82,92 @@
                         2021 y.x.v. - Toshkent davlat stomatologiya instituti Ukuv ishlari buyicha prorektor
                     </p>
                     <ul class="about-lists">
-                        <li><i class="fa fa-phone"></i>
-                            <span><b>Telefon</b>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <span>
+                                <b>Telefon</b>
                                 <p>
                                     +998(91) 151-31-17
                                 </p>
-                            </span></li>
-                        <li><i class="fa fa-envelope"></i>
-                            <span><b>Elektron pochta</b>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <span>
+                                <b>Elektron pochta</b>
                                 <p>
                                     info@tsdi.uz
                                 </p>
-                            </span></li>
-                        <li><i class="fa fa-graduation-cap"></i>
-                            <span><b>Ilmiy unvon/daraja</b>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-graduation-cap"></i>
+                            <span>
+                                <b>Ilmiy unvon/daraja</b>
                                 <p>
                                     Tibbiyot fanlari doktori, Dotsent
                                 </p>
                             </span>
                         </li>
-                        <li><i class="fa fa-clock-o"></i>
-                            <span><b>Qabul vaqti</b>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            <span>
+                                <b>
+                                    Qabul vaqti
+                                </b>
                                 <p>
                                     Har kuni 13:00-16:00
                                 </p>
-                            </span></li>
+                            </span>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="about-content">
                 <h3>O‘quv ishlari bo‘yicha prorektorning lavozim vazifalari</h3>
-                <p>O‘zbekiston Respublikasi qonunlari, Prezident farmonlari va farmoyishlari, Oliy Majlis va Vazirlar
+                <p>
+                    O‘zbekiston Respublikasi qonunlari, Prezident farmonlari va farmoyishlari, Oliy Majlis va Vazirlar
                     Mahkamasining ta’lim va kadrlar tayyorlash sohasidagi qarorlarini amalga oshirishni tashkil
-                    etish;<br>Davlat ta’lim standartlari asosida o‘quv ishlarini tashkil etish va malakali kadrlar
-                    tayyorlashni ta’minlash;<br>Davlat ta’lim standartlariga muvofiq bilimlar mazmuni va tayyorgarlik
+                    etish;
+                    <br>
+                    Davlat ta’lim standartlari asosida o‘quv ishlarini tashkil etish va malakali kadrlar
+                    tayyorlashni ta’minlash;
+                    <br>
+                    Davlat ta’lim standartlariga muvofiq bilimlar mazmuni va tayyorgarlik
                     darajasiga qo‘yiladigan talablar majmuasini barcha fakultet dekanlari, kafedra mudirlari va pedagog
-                    o‘qituvchilarning bilishini ta’minlash;<br>Mutasaddi yuqori tashkilotlarning buyruqlarini,
+                    o‘qituvchilarning bilishini ta’minlash;
+                    <br>
+                    Mutasaddi yuqori tashkilotlarning buyruqlarini,
                     farmoyishlari va ko‘rsatmalarini, o‘quv–tarbiya jarayonlariga oid masalalar bo‘yicha TSDI Ilmiy
-                    kengashi qarorlari va rektor buyruqlarining bajarilishini tashkil qilish;<br>Ilg‘or mamlakatlar
+                    kengashi qarorlari va rektor buyruqlarining bajarilishini tashkil qilish;
+                    <br>
+                    Ilg‘or mamlakatlar
                     ta’lim tizimining rivojlanish tendensiyalarini o‘rganish, “Ta’lim to‘g‘risida”gi qonun, “Kadrlar
                     tayyorlash milliy dasturi” va boshqa ta’limga oid qonunlarda ko‘rsatilgan vazifalarni amalga
                     oshirish borasidagi uslub va vositalarni ishlab chiqish hamda ularning amalga oshirilishini
-                    ta’minlash;<br>O‘quv-tarbiya jarayonida o‘qitishning ilg‘or shakllarini, shu jumladan masofadan
+                    ta’minlash;
+                    <br>
+                    O‘quv-tarbiya jarayonida o‘qitishning ilg‘or shakllarini, shu jumladan masofadan
                     turib o‘qitish, yangi pedagogik va axborot-kommunikatsiya texnologiyalarini joriy etish, ulardan
-                    samarali foydalanishni tashkil qilish;<br>Faoliyat yo‘nalishi bo‘yicha takliflar tayyorlash va
-                    ishlarni tashkil etish;<br>O‘quv jarayonini ta’minlaydigan bo‘lim va fakultetlardagi dekanatlar
-                    ishlarini muvofiqlashtirish, tashkil etish hamda nazorat qilish;<br>O‘zbekiston Respublikasi
+                    samarali foydalanishni tashkil qilish;
+                    <br>
+                    Faoliyat yo‘nalishi bo‘yicha takliflar tayyorlash va
+                    ishlarni tashkil etish;
+                    <br>
+                    O‘quv jarayonini ta’minlaydigan bo‘lim va fakultetlardagi dekanatlar
+                    ishlarini muvofiqlashtirish, tashkil etish hamda nazorat qilish;
+                    <br>
+                    O‘zbekiston Respublikasi
                     qonunlari, Prezident farmonlari va farmoyishlari, Oliy Majlis va Vazirlar Mahkamasining ta’lim va
-                    kadrlar tayyorlash sohasidagi qarorlarini amalga oshirishni tashkil etish;<br>Davlat ta’lim
-                    standartlari asosida o‘quv ishlarini tashkil etish va malakali kadrlar tayyorlashni ta’minlash;<br>Davlat
+                    kadrlar tayyorlash sohasidagi qarorlarini amalga oshirishni tashkil etish;
+                    <br>
+                    Davlat ta’lim standartlari asosida o‘quv ishlarini tashkil etish va malakali kadrlar tayyorlashni ta’minlash;
+                    <br>
+                    Davlat
                     ta’lim standartlariga muvofiq bilimlar mazmuni va tayyorgarlik darajasiga qo‘yiladigan talablar
                     majmuasini barcha fakultet dekanlari, kafedra mudirlari va pedagog o‘qituvchilarning bilishini
-                    ta’minlash;<br>Mutasaddi yuqori tashkilotlarning buyruqlarini, farmoyishlari va ko‘rsatmalarini,
+                    ta’minlash;
+                    <br>Mutasaddi yuqori tashkilotlarning buyruqlarini, farmoyishlari va ko‘rsatmalarini,
                     o‘quv–tarbiya jarayonlariga oid masalalar bo‘yicha TSDI Ilmiy kengashi qarorlari va rektor
                     buyruqlarining bajarilishini tashkil qilish;<br>Ilg‘or mamlakatlar ta’lim tizimining rivojlanish
                     tendensiyalarini o‘rganish, “Ta’lim to‘g‘risida”gi qonun, “Kadrlar tayyorlash milliy dasturi” va

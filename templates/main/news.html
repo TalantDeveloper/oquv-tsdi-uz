@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="yangiliklar">
+        <div class="top-content">
+            <div class="content">
+                <nav class="top-bar">
+                    <h3>
+                        <i class="fa fa-users"></i>
+                        Bo`lim yangilik va e`lonlari
+                    </h3>
+                    <nav>
+                        <a href="{% url 'main:welcome' %}">
+                            <i class="fa fa-home clfacebook"></i>
+                        </a>
+                        /
+                        <i>
+                            <a class="clfacebook" href="{% url 'main:welcome' %}">
+                                xodim
+                            </a>
+                        </i>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+
+        <div class="content news-content">
+            {% for new in news %}
+                <!-- Yangiliklar boshlandi -->
+                <nav class="new-body">
+                    <nav class="new-time"><em>Yangilik |</em> {{ new.create_at | date:"d:m:Y" }} <i class="fa fa-eye">
+                        {{ new.sees }}</i></nav>
+                    <nav class="news-img"><img src="{{ new.image.url }}" alt="rasm"></nav>
+                    <p class="new-text">
+                        <a href="{% url 'main:new' new.pk %}">
+                            {{ new.title|slice:160 }}
+                        </a>
+                    </p>
+                </nav>
+            {% empty %}
+                <h2 style="text-align: center; justify-content: center;">Yangiliklar yo'q</h2>
+            {% endfor %}
+        <!-- Yangiliklar tugadi -->
+        </div>
+    </div>
+{% endblock %}

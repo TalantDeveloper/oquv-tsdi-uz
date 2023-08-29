@@ -4,7 +4,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class New(models.Model):
     title = models.CharField(max_length=255, verbose_name="Title")  # Translation
-    content = RichTextUploadingField(verbose_name="Content")  # Translation
+    content = models.TextField(verbose_name="Content")  # Translation
     image = models.ImageField(upload_to="./news/", default="./news/news.png")
 
     create_at = models.DateTimeField(auto_now_add=True)
@@ -33,7 +33,7 @@ class Faculty(models.Model):
 
 class Curriculum(models.Model):
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
-    course = models.ManyToManyField(Course, null=True, blank=True)
+    course = models.ManyToManyField(Course)
     file = models.FileField(upload_to="./oquv/")
 
     def __str__(self):
@@ -43,3 +43,29 @@ class Curriculum(models.Model):
 class CourseShip(models.Model):
     curriculum = models.ForeignKey(Curriculum, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+
+class Description(models.Model):
+    """Malaka tavsifnomasi"""
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    file = models.FileField(upload_to="./description/")
+
+    def __str__(self):
+        return self.file.name
+
+
+class Requirement(models.Model):
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    file = models.FileField(upload_to="./requirements/")
+
+    def __str__(self):
+        return self.file.name
+
+
+class StudentTable(models.Model):
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    file = models.FileField(upload_to='./jadval/')
+
+    def __str__(self):
+        return self.file.name

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="malaka">
+        <div class="top-content">
+            <div class="content">
+                <nav class="top-bar">
+                    <h3>
+                        <i class="fa fa-users"></i>
+                        Malaka tavsifnomasi
+                    </h3>
+                    <nav>
+                        <a href="{% url 'main:welcome' %}">
+                            <i class="fa fa-home clfacebook"></i>
+                        </a>/
+                        <i>
+                            <a class="clfacebook" href="{% url 'main:welcome' %}">
+                                malaka tavsifnomasi
+                            </a>
+                        </i>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+        <!-- Malaka tavsifnoma -->
+        <div class="content">
+            <!-- Malaka tavsifnoma boshlandi -->
+            {% for description in descriptions %}
+                <a href="{{ description.file.url }}">
+                    <nav>
+                        <img src="{% static 'image/book.png' %}" alt="file.png">
+                        <p>{{ description.faculty.name_uz }} malaka tavsifnomasi</p>
+                    </nav>
+                </a>
+                {% empty %}
+                <h2>Malaka tavsifnoma bo'yicha ma'lumotlar yo'q.</h2>
+            {% endfor %}
+        <! -- Malaka tavsifnoma tugadi -->
+        </div>
+    </div>
+{% endblock %}

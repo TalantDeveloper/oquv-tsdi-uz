@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="oquv_reja">
+        <div class="top-content">
+            <div class="content">
+                <nav class="top-bar">
+                    <h3>
+                        <i class="fa fa-users"></i>
+                        Dars javdal
+                    </h3>
+                    <nav>
+                        <a href="{% url 'main:welcome' %}">
+                            <i class="fa fa-home clfacebook"></i>
+                        </a>/
+                        <i><a class="clfacebook" href="{% url 'main:jadval' %}">
+                            dars jadval
+                        </a></i>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+        <div class="content"><br><br>
+            <!-- Fakultetlar bo'yicha boshlandi -->
+            {% for faculty in faculties %}
+                <p class="div-fakultet">{{ faculty.name }}</p>
+                {% for student_table in student_tables %}
+                    {% if student_table.faculty == faculty %}
+                        <div class="fakulty-box">
+                            <!-- Kurslar bo'yicha boshlandi -->
+                            {% for course in courses %}
+                                {% if course == student_table.course %}
+                                    <a href="{{ curriculum.file.url }}">
+                                        <nav class="file-box">
+                                            <img class="file-img" src="{% static 'image/book.png' %}" alt="file.png">
+                                            <p class="file-text">
+                                                <br> {{ faculty.name_uz }} {{ course.name_uz }} dars jadval</p>
+                                        </nav>
+                                    </a>
+                                {% endif %}
+                            {% empty %}
+                                <a href="#">
+                                    <nav class="file-box">
+                                        <img class="file-img" src="{% static 'image/book.png' %}" alt="file.png">
+                                        <p class="file-text">
+                                            <br> {{ faculty.name_uz }} {{ course.name_uz }} dars jadval
+                                        </p>
+                                    </nav>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% empty %}
+                    <p class="file-text">
+                        {{ faculty.name_uz }} dars jadval kiritilmagan :)
+                    </p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

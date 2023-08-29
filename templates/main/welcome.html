@@ -5,35 +5,38 @@
 
     <div class="home">
         <div class="sliders">
-            <div class="slider"></div>
+            <div class="slider">
+
+            </div>
         </div>
         <div class="links">
             <div class="content">
-                <nav class="link-box"><a href="/https://hemis.tsdi.uz/" target="_blank">
-                    <nav class="link">
-                        <nav class="link-img"><img src="{% static 'image/teacher.png' %}" alt="">
+                <nav class="link-box">
+                    <a href="/https://hemis.tsdi.uz/" target="_blank">
+                        <nav class="link">
+                            <nav class="link-img"><img src="{% static 'image/teacher.png' %}" alt="">
+                            </nav>
+                            <h3>HEMIS-Teacher</h3>
+                            <p>Toshkent davlat stomatologiya instituti Hemis tizimga O'qituvchilar kirish!</p>
                         </nav>
-                        <h3>HEMIS-Teacher</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis autem dolor vel!</p>
-                    </nav>
-                </a><a href="/https://student.tsdi.uz/" target="_blank">
+                    </a><a href="/https://student.tsdi.uz/" target="_blank">
                     <nav class="link">
                         <nav class="link-img"><img src="{% static 'image/student.png' %}" alt="">
                         </nav>
                         <h3>HEMIS-Student</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis autem dolor vel!</p>
+                        <p>Toshkent davlat stomatologiya instituti Hemis tizimga Studentlar kirish!</p>
                     </nav>
                 </a><a href="/https://moodle.tsdi.uz/" target="_blank">
                     <nav class="link">
                         <nav class="link-img"><img src="{% static 'image/moodle.png' %}" alt=""></nav>
                         <h3>Moodle tizimi</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis autem dolor vel!</p>
+                        <p>Toshkent davlat stomatologiya instituti Moodle tizimiga kirish!</p>
                     </nav>
-                </a><a href="/https://e-xat.tsdi.uz/" target="_blank">
+                </a><a href="https://library.tsdi.uz/" target="_blank">
                     <nav class="link">
                         <nav class="link-img"><img src="{% static 'image/xat.webp' %}" alt=""></nav>
-                        <h3>e-Xat tizimi</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis autem dolor vel!</p>
+                        <h3>Elektron kutubxona</h3>
+                        <p>Toshkent Davlat Stomatologiya Instituti Elektron kutubxona tizimiga kirish!</p>
                     </nav>
                 </a></nav>
             </div>
@@ -42,13 +45,14 @@
             <div class="content">
                 <div class="stat-circle">
                     <nav><h3><i class="fa fa-map"></i></h3><br>
-                        <p>123</p></nav>
+                        <p style="text-align: center;">2578 ta <br>Talaba</p></nav>
                     <nav><h3><i class="fa fa-map"></i></h3><br>
-                        <p>124</p></nav>
+                        <p style="text-align: center;">124 ta <br>Ustozlar</p></nav>
                     <nav><h3><i class="fa fa-map"></i></h3><br>
-                        <p>125</p></nav>
+                        <p style="text-align: center;">1059 ta <br>1-Kurslar</p></nav>
                     <nav><h3><i class="fa fa-map"></i></h3><br>
-                        <p>126</p></nav>
+                        <p style="text-align: center;">6 ta <br>O'quv bino</p>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -75,7 +79,8 @@
                 <div class="new-box">
                     {% for new in news %}
                         <nav class="new-body">
-                            <nav class="new-time"><em>Yangilik |</em> {{ new.create_at | date:"d:m:Y"}} <i class="fa fa-eye">
+                            <nav class="new-time"><em>Yangilik |</em> {{ new.create_at | date:"d:m:Y" }} <i
+                                    class="fa fa-eye">
                                 {{ new.sees }}</i>
                             </nav>
                             <nav class="news-img"><img src="{{ new.image.url }}" alt="rasm">
@@ -88,45 +93,22 @@
                         </nav>
                     {% endfor %}
 
-
-                    <nav class="new-body">
-                        <nav class="new-time"><em>Yangilik |</em> 19.12.2022 <i class="fa fa-eye"> 65</i></nav>
-                        <nav class="news-img"><img src="{% static 'image/news.png' %}" alt="rasm">
-                        </nav>
-                        <p class="new-text">Qatarda bo‘lib o‘tayotgan Jahon chempionati finalida Fransiyani mag‘lub
-                            etgan Argentina terma jamoasi mundiallarda uchinchi marta chempionlikni qo‘lga
-                            kiritdi.</p></nav>
-                    <nav class="new-body">
-                        <nav class="new-time"><em>Yangilik |</em> 19.12.2022 <i class="fa fa-eye"> 65</i></nav>
-                        <nav class="news-img"><img src="{% static 'image/news.png' %}" alt="rasm">
-                        </nav>
-                        <p class="new-text">Qatarda bo‘lib o‘tayotgan Jahon chempionati finalida Fransiyani mag‘lub
-                            etgan Argentina terma jamoasi mundiallarda uchinchi marta chempionlikni qo‘lga
-                            kiritdi.</p>
-                    </nav>
-                    <nav class="new-body">
-                        <nav class="new-time"><em>Yangilik |</em> 19.12.2022 <i class="fa fa-eye"> 65</i></nav>
-                        <nav class="news-img"><img src="{% static 'image/news.png' %}" alt="rasm">
-                        </nav>
-                        <p class="new-text">Qatarda bo‘lib o‘tayotgan Jahon chempionati finalida Fransiyani mag‘lub
-                            etgan Argentina terma jamoasi mundiallarda uchinchi marta chempionlikni qo‘lga
-                            kiritdi.</p>
-                    </nav>
                 </div>
             </div>
         </div>
-        <div class="services">
+        <div class="services" style="padding-bottom: 30px;">
             <div class="content">
-                <nav class="serv"><a href="/"><p>Elektron kutubxona</p></a></nav>
-                <nav class="serv"><a href="/"><p>Diplomni tasdiqlash</p></a></nav>
-                <nav class="serv"><a href="/"><p>Talaba ma`lumotnomasi</p></a></nav>
-                <nav class="serv"><a href="/"><p>Bosh ilmi-metodik markaz</p></a></nav>
-                <nav class="serv"><a href="/"><p>Google Scholar</p></a></nav>
-                <nav class="serv"><a href="/"><p>ResearchGate</p></a></nav>
-                <nav class="serv"><a href="/"><p>Ish joyidan ma`lumot</p></a></nav>
-                <nav class="serv"><a href="/"><p>Elektron kutubxona</p></a></nav>
-                <nav class="serv"><a href="/"><p>Elektron kutubxona</p></a></nav>
-                <nav class="serv"><a href="/"><p>Elektron kutubxona</p></a></nav>
+                <nav class="serv"><a href="https://library.tsdi.uz/"><p>Elektron kutubxona</p></a></nav>
+                <nav class="serv"><a href="https://yotoqxona.tsdi.uz/"><p>Yoqotxona qabul</p></a></nav>
+                <nav class="serv"><a href="https://qabul.tsdi.uz/"><p>PIMU qabul</p></a></nav>
+                <nav class="serv"><a href="https://student.tsdi.uz/dashboard/login"><p>Hemis Student</p></a></nav>
+                <nav class="serv"><a href="https://moodle.tsdi.uz/login/index.php"><p>Moodle Student</p></a></nav>
+                <nav class="serv"><a href="https://infox.edu.uz/site/login"><p>Info Edu</p></a></nav>
+                <nav class="serv"><a href="https://phd.mininnovation.uz/"><p>Phd va Dcs</p></a></nav>
+                <nav class="serv"><a href="https://app.ijro.uz/auth"><p>Idoralararo elektron tizim</p></a></nav>
+                <nav class="serv"><a href="https://student.tsdi.uz/dashboard/diploma"><p>Diplomni tasdiqlash</p></a>
+                </nav>
+                <nav class="serv"><a href="https://edo.ijro.uz/welcome"><p>IJRO.GOV.UZ</p></a></nav>
             </div>
         </div>
     </div>
