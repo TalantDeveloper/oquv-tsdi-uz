@@ -62,7 +62,7 @@ class Requirement(models.Model):
         return self.file.name
 
 
-class StudentTable(models.Model):
+class StudentTable(models.Model):  #Dars jadvali
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     file = models.FileField(upload_to='./jadval/')

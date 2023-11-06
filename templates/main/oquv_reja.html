@@ -25,7 +25,7 @@
         </div>
         <div class="content">
             <br><br>
-        <!-- O'quv rejalar boshlandi -->
+            <!-- O'quv rejalar boshlandi -->
             {% for faculty in faculties %}
                 <p class="div-fakultet">{{ faculty.name }}</p>
                 {% for curriculum in curriculums %}
@@ -43,8 +43,11 @@
                         </div>
                     {% endif %}
                 {% endfor %}
+            {% empty %}
+                <h2 style="height: 200px; text-align: center; justify-items: center;">O'quv reja bo'yicha ma'lumotlar yo'q.</h2>
             {% endfor %}
-        <!-- O'quv raja tugadi -->
+
+            <!-- O'quv raja tugadi -->
         </div>
     </div>
 {% endblock %}

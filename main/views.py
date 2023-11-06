@@ -3,7 +3,7 @@ from .models import Faculty, Course, Curriculum, New, Description, Requirement, 
 
 
 def welcome_view(request):
-    news = New.objects.all()[:4]
+    news = New.objects.all()
     content = {
         'news': news
     }
@@ -60,3 +60,7 @@ def dars_jadval_view(request):
         'student_tables': student_tables
     }
     return render(request, 'main/jadval.html', content)
+
+
+def none_page(request, name):
+    return render(request, 'main/none_page.html', {'name': name})

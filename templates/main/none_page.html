@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
     <div class="malaka">
         <div class="top-content">
@@ -8,7 +7,7 @@
                 <nav class="top-bar">
                     <h3>
                         <i class="fa fa-users"></i>
-                        Malaka tavsifnomasi
+                        {{ name }}
                     </h3>
                     <nav>
                         <a href="{% url 'main:welcome' %}">
@@ -16,7 +15,7 @@
                         </a>/
                         <i>
                             <a class="clfacebook" href="{% url 'main:welcome' %}">
-                                malaka tavsifnomasi
+                                {{ name }}
                             </a>
                         </i>
                     </nav>
@@ -25,18 +24,10 @@
         </div>
         <!-- Malaka tavsifnoma -->
         <div class="content">
-            <!-- Malaka tavsifnoma boshlandi -->
-            {% for description in descriptions %}
-                <a href="{{ description.file.url }}">
-                    <nav>
-                        <img src="{% static 'image/book.png' %}" alt="file.png">
-                        <p>{{ description.faculty.name_uz }} malaka tavsifnomasi</p>
-                    </nav>
-                </a>
-                {% empty %}
-                <h2 style="height: 200px; text-align: center; justify-items: center;">Malaka tavsifnoma bo'yicha ma'lumotlar yo'q.</h2>
-            {% endfor %}
-        <! -- Malaka tavsifnoma tugadi -->
+            <h2 style="height: 200px; text-align: center; justify-items: center;">
+                {{ name }}: not found...
+            </h2>
+
         </div>
     </div>
 {% endblock %}
