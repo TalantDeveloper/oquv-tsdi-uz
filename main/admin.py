@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import New, Course, Curriculum, Faculty
+from .models import New, Course, Curriculum, Faculty, CourseShip, Description, Requirement, StudentTable
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -25,6 +25,8 @@ class FacultyAdmin(TranslationAdmin):
 
 
 admin.site.register(Curriculum)
-# class CurriculumAdmin(admin.ModelAdmin):
-#     list_display = ['id', 'file']
-#     list_display_links = ['id', 'file']
+admin.site.register(CourseShip)
+admin.site.register(Description)
+admin.site.register(Requirement)
+admin.site.register(StudentTable)
+
